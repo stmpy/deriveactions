@@ -3,9 +3,10 @@
 # @depends jQuery
 ###
 class DeriveActions
-  derive: (data) ->
-    data = @_parseResponse data unless _.isObject(data)
+  deriveActions: (data) ->
+    data = @parseResponse data unless _.isObject(data)
     return unless data? # exit if parseResponse is unsuccessfull
+    console.log data
     @[action]?(attrs) for action,attrs of data.actions when data.actions?
 
   # Redirection
@@ -32,6 +33,8 @@ class DeriveActions
 
   # Update Content
   update: (sections) =>
+    console.log 'updating'
+    console.log sections
     $('#'+id).html(content) for id,content of sections when $('#'+id).length > 0
 
   # Set Attribute
@@ -42,7 +45,7 @@ class DeriveActions
   reset: (sections) ->
     $('#'+id)[i].reset() for id, i in sections when $('#'+id).length > 0
 
-  _parseResponse: (string) ->
+  parseResponse: (string) ->
     try
       $.parseJSON string
     catch err
