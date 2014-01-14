@@ -6,7 +6,6 @@ class DeriveActions
   deriveActions: (data) ->
     data = @parseResponse data unless _.isObject(data)
     return unless data? # exit if parseResponse is unsuccessfull
-    console.log data
     @[action]?(attrs) for action,attrs of data.actions when data.actions?
 
   # Redirection
