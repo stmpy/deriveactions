@@ -7,6 +7,9 @@
   ],
   "description": "Simple interface between PHP DeriveAction library and JS interactions",
   "main": "deriveActions.coffee",
+  "dependencies": {
+    "jquery": "~1.10"
+  }
   "keywords": [
     "javascript",
     "deriveactions",
