@@ -1,6 +1,6 @@
 {
   "name": "deriveactions",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "homepage": "https://github.com/stmpy/deriveactions",
   "authors": [
     "Travis Jeppson <travis.jeppson@3-form.com>"
@@ -9,7 +9,7 @@
   "main": "deriveActions.coffee",
   "dependencies": {
     "jquery": "~1.10"
-  }
+  },
   "keywords": [
     "javascript",
     "deriveactions",
