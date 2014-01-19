@@ -32,8 +32,6 @@ class DeriveActions
 
   # Update Content
   update: (sections) =>
-    console.log 'updating'
-    console.log sections
     $('#'+id).html(content) for id,content of sections when $('#'+id).length > 0
 
   # Set Attribute
