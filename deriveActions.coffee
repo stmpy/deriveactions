@@ -4,9 +4,9 @@
 ###
 class DeriveActions
   deriveActions: (data) ->
-    data = @parseResponse data unless _.isObject(data)
-    return unless data? # exit if parseResponse is unsuccessfull
-    @[action]?(attrs) for action,attrs of data.actions when data.actions?
+    data = @parseResponse data if typeof data == 'string'
+    (@[action]?(attrs) for action,attrs of data.actions when data.actions?) unless typeof data == 'string' # exit if parseResponse is not an object
+    return data
 
   # Redirection
   redirect: (settings) ->
