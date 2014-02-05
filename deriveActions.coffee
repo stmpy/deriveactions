@@ -24,7 +24,7 @@ class DeriveActions
   # Reloading sections
   reload: (sections) ->
     # trigger reload
-    $('#'+id).trigger('reload.deriveActions') for id in sections when $('#'+id).length > 0
+    $('#'+id).trigger('reload') for id in sections when $('#'+id).length > 0
 
   # Replace Content
   replace: (sections) =>
