@@ -65,7 +65,7 @@ JSMonitor.clean = (content) ->
       for tag in scriptTags
         scriptSrc = tag.match /src=(?:"|').+\/(.+?)(?:"|')/
         if scriptSrc isnt null and @loaded.indexOf(scriptSrc[1]) is -1 # doesn't exist, add to loaded
-          console.log '------------ ALLOWING: '+scriptSrc[1]
+          # console.log '------------ ALLOWING: '+scriptSrc[1]
           @loaded.push(scriptSrc[1])
           continue
         else if scriptSrc isnt null # already exists don't load
@@ -86,7 +86,7 @@ JSMonitor.clean = (content) ->
           # check if delegateSlice really contains a delegate
           containsDelegate = delegateSlice.match(/(?:jQuery|\$)\(document\)\.on\(('|")([^\1]+?)\1\s*,\s*('|")([^\3]+?)(?:\3)/)
           if containsDelegate and @loaded.indexOf(containsDelegate[4]) is -1 # doesn't exist, add to loaded
-            console.log '------------ ALLOWING: '+containsDelegate[4]
+            # console.log '------------ ALLOWING: '+containsDelegate[4]
             @loaded.push containsDelegate[4]
           else if containsDelegate isnt null
             # console.warn '------------ BLOCKING: '+containsDelegate[4]
